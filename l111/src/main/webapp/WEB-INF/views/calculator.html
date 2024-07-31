@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Калькулятор</title>
+</head>
+<body>
+<h1>Калькулятор</h1>
+<form action="/calculate" method="post">
+    <input type="number" name="number1" placeholder="Первый аргумент" required>
+    <input type="number" name="number2" placeholder="Второй аргумент" required>
+    <select name="operation">
+        <option value="add">Сложить</option>
+        <option value="subtract">Вычесть</option>
+        <option value="multiply">Умножить</option>
+        <option value="divide">Разделить</option>
+    </select>
+    <button type="submit">Вычислить</button>
+</form>
+
+<div th:if="${result != null}">
+    <h2>Результат: <span th:text="${result}"></span></h2>
+</div>
+
+<h2>История вычислений:</h2>
+<ul>
+    <li th:each="calc : ${history}">
+        <span th:text="${calc.number1}"></span>
+        <span th:text="${calc.operation}"></span>
+        <span th:text="${calc.number2}"></span> =
+        <span th:text="${calc.result}"></span>
+    </li>
+</ul>
+</body>
+</html>
