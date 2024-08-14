@@ -1,0 +1,12 @@
+package com.example.confectionery.service;
+
+import com.example.confectionery.model.CandyType;
+import java.util.List;
+
+public interface CandyTypeService {
+    void save(CandyType candyType);
+    void update(CandyType candyType);
+    void delete(Long id);
+    CandyType findById(Long id);
+    List<CandyType> findAll();
+}

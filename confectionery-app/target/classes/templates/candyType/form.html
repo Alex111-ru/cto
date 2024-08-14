@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Candy Type Form</title>
+</head>
+<body>
+<h1>Candy Type Form</h1>
+<form th:action="@{/candy-types/save}" th:object="${candyType}" method="post">
+    <label>ID:</label>
+    <input type="text" th:field="*{id}" disabled="disabled"/>
+    <br/>
+    <label>Name:</label>
+    <input type="text" th:field="*{name}"/>
+    <br/>
+    <label>Description:</label>
+    <input type="text" th:field="*{description}"/>
+    <br/>
+    <button type="submit">Save</button>
+</form>
+<a href="/candy-types">Back to list</a>
+</body>
+</html>
