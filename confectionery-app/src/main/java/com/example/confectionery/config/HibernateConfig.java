@@ -1,4 +1,4 @@
-package com.example.confectionery.config;
+package com.example.confectionery.config;//посмотри конвенцию именования пакетов и придумай название. com.example плохо
 
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;

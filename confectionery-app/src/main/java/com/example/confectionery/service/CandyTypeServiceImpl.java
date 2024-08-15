@@ -31,7 +31,7 @@ public class CandyTypeServiceImpl implements CandyTypeService {
     @Override
     public CandyType findById(Long id) {
         return candyTypeDao.findById(id);
-    }
+    }//тут бы обработать ситуацию если ничего не нашли
 
     @Override
     public List<CandyType> findAll() {
