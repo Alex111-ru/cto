@@ -27,7 +27,7 @@ class ClientServiceTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-    }
+    }//лучше вместо этого добавить над классом @ExtendWith(MockitoExtension.class)
 
     @Test
     void getClientById_ClientExists_ReturnsClient() {
@@ -37,7 +37,7 @@ class ClientServiceTest {
         Client foundClient = clientService.getClientById(1L);
 
         assertEquals(client, foundClient);
-        verify(clientRepository, times(1)).findById(1L);
+        verify(clientRepository, times(1)).findById(1L);//times(1) не надо. Просто verify подразумевает, что 1 раз исполняется
     }
 
     @Test

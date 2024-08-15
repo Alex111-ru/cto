@@ -23,10 +23,10 @@ class DemoApplicationTests {
 	private int port;
 
 	@Autowired
-	private TestRestTemplate restTemplate;
+	private TestRestTemplate restTemplate;//а вот в тестах автовайрить через поля нормальная практика
 
 	@Autowired
-	private ClientRepository clientRepository;
+	private ClientRepository clientRepository;//неиспользуемые зависимости должны быть удалены
 
 	@Test
 	void createClientTest() {
