@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.util.List;
-@Transactional
+@Transactional//над классом не надо вешать
 @Repository
 
 public class CandyDaoImpl implements CandyDao {
@@ -32,7 +32,7 @@ public class CandyDaoImpl implements CandyDao {
     @Override
     public void delete(Long id) {
         Candy candy = findById(id);
-        if (candy != null) {
+        if (candy != null) {//сравнение на null надо делать другими методами. Тут просто ссылки сравниваются. Например Objects.requireNonNull()
             sessionFactory.getCurrentSession().delete(candy);
         }
     }

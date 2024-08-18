@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Data
+@Data//Эту аннотацию с entity не надо, Лучше заменить на @Getter, @Setter. equals и hashCode переопределить методами
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

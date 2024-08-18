@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(RuntimeException.class)
+    @ExceptionHandler(RuntimeException.class)//отлавливать RuntimeException плохая практика, ловить в основном надо кастомные исключения. Или хотя бы IllegalStateException или IllegalArgumentException
     public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }

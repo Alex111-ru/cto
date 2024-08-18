@@ -16,7 +16,7 @@ import java.util.List;
 public class ClientController {
 
     @Autowired
-    private ClientService clientService;
+    private ClientService clientService;//в основном коде лучше делать внедрять зависимости через конструктор
 
     @GetMapping
     public ResponseEntity<List<Client>> getAllClients() {

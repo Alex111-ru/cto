@@ -26,7 +26,7 @@ public class ClientService {
     }
 
     public Client createClient(ClientDTO clientDTO) {
-        Client client = new Client();
+        Client client = new Client();//на будущееб такие преобразования должны делаться через маппер
         client.setName(clientDTO.getName());
         client.setPhoneNumber(clientDTO.getPhoneNumber());
         client.setBalance(clientDTO.getBalance());

@@ -35,7 +35,7 @@ public class PaymentService {
         BigDecimal amount = transferDTO.getAmount();
 
         if (sender.getBalance().compareTo(amount) < 0) {
-            throw new RuntimeException("Insufficient funds");
+            throw new RuntimeException("Insufficient funds");//лучше кастомное исключение, или IllegalArgumentException
         }
 
         sender.setBalance(sender.getBalance().subtract(amount));

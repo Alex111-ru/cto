@@ -3,6 +3,7 @@ package com.example.confectionery.model;
 
 import javax.persistence.*;
 
+//пакет с сущностями надо называть entity
 @Entity
 @Table(name = "candy")
 public class Candy {
