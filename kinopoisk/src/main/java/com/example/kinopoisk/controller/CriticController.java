@@ -14,6 +14,7 @@ import java.util.Optional;
 @RequestMapping("/api/critics")
 public class CriticController {
 
+    // Инжектить зависимости через конструктор
     @Autowired
     private CriticService criticService;
 

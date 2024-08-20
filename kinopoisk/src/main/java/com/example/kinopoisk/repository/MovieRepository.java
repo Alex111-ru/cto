@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
 
+    // Такие комментарии не нужны, по названию и так понятно
     // Поиск фильмов по названию, игнорируя регистр
     List<Movie> findByTitleContainingIgnoreCase(String title);
 
