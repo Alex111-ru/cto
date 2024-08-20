@@ -19,6 +19,7 @@ public class MovieServiceTests {
     @InjectMocks
     private MovieService movieService;
 
+    // Можно вместо этого над классом навесить @ExtendWith(MockitoExtension.class)
     public MovieServiceTests() {
         MockitoAnnotations.openMocks(this);
     }

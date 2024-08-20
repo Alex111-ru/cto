@@ -62,6 +62,10 @@ public class MovieController {
             @RequestParam(required = false) Double minRating,
             @RequestParam(required = false) Double maxRating,
             @RequestParam(required = false) List<Long> genreIds) {
+        // Передавать в качестве @RequestParam больше 2х аргументов плохая практика, лучше чере @ResponseBody
+        // Большое количество else if - признак плохого кода. Тут нужен рефакторинг с использованием какого-нибудь шаблона проектирования
+        // Также не предусмотрена ситуация если все фильтры переданы
+        // Агрегацию поиска лучше вынести в отдельный сервис из которого уже вызывать movieService
         if (title != null) {
             return movieService.findMoviesByTitle(title);
         } else if (startYear != null && endYear != null) {

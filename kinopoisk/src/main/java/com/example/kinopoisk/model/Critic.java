@@ -1,5 +1,6 @@
 package com.example.kinopoisk.model;
 
+// импорт с звездочкой плохо
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -11,6 +12,8 @@ public class Critic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // над полями лучше явно указывать имя @Column(name = "first_name")
+    @Column(name = "first_name")
     private String firstName;
 
     private String lastName;
@@ -21,6 +24,7 @@ public class Critic {
     @OneToMany(mappedBy = "critic")
     private List<Review> reviews;
 
+    // Надо использовать Lombok с @Getter и @Setter
     // Getters and Setters
     public Long getId() {
         return id;

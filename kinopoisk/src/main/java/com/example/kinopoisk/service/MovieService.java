@@ -28,6 +28,7 @@ public class MovieService {
 
     public Page<Movie> getMoviesPaginated(int page, int size, String sortBy, String sortOrder) {
         Sort sort = Sort.by(sortBy);
+        // А вот тут неплохо и от нпе защитился частично и тернарный оператор применил. Лайк
         sort = "desc".equalsIgnoreCase(sortOrder) ? sort.descending() : sort.ascending();
         return movieRepository.findAll(PageRequest.of(page, size, sort));
     }
@@ -76,10 +77,12 @@ public class MovieService {
 
     private void updateMovieRating(Movie movie) {
         List<Review> reviews = reviewRepository.findByMovieId(movie.getId());
+        // Логическая ошибка, если ревью не будет то средняя 5.0 и не установится
         if (!reviews.isEmpty()) {
             double average = reviews.stream()
                     .mapToInt(Review::getRating)
                     .average()
+                    // 5.0 - магическое число, непонятно откуда взявшееся. Его нужно вынести в константу с говорящим названием
                     .orElse(5.0);
             movie.setAverageRating(average);
         }
